@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle,rgba(12, 157, 194, 1) 9%, rgba(0, 0, 102, 1) 89%);
+    gap: 2vh;
+}
+
+
+#tabuleiro{
+    height: 505px;
+    width: 505px;
+    background-color: rgb(0, 5, 49);
+    border: 5px solid rgb(6, 22, 172);
+}
+
+
+#botoes{
+    height: 50px;
+    width: 503px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#botoes button{
+    height: 50px;
+    width: 175px;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: rgb(0, 0, 112);
+    cursor: pointer;
+    color: aqua;
+    transition: 0.3s ease;
+}
+#botoes button:hover{
+    background-color: rgb(0, 0, 70);
+    color: rgb(6, 158, 158);
+    font-size: 1.8rem;
+}
+
+
+
+/* /////// Objetos JavaScript /////// */
+
+
+
+.bloco{
+    height: 123.5px;
+    width: 123.5px;
+    background-color: aqua;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
