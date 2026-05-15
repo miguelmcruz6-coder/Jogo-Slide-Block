@@ -12,12 +12,12 @@ facil.addEventListener("click", () => {
 
 medio.addEventListener("click", () => {
     tabuleiro.style.gridTemplateColumns = 'repeat(4, 1fr)';   /* 4 colunas iguais */
-    iniciar(4, 123.5)
+    iniciar(4, 124)
 })
 
 dificil.addEventListener("click", () => {
     tabuleiro.style.gridTemplateColumns = 'repeat(5, 1fr)';   /* 5 colunas iguais */
-    iniciar(5, 98.9)
+    iniciar(5, 99)
 })
 
 
