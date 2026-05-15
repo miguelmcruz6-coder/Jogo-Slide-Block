@@ -12,12 +12,12 @@ facil.addEventListener("click", () => {
 
 medio.addEventListener("click", () => {
     tabuleiro.style.gridTemplateColumns = 'repeat(4, 1fr)';   /* 4 colunas iguais */
-    iniciar(4, 123.5)
+    iniciar(4, 124)
 })
 
 dificil.addEventListener("click", () => {
     tabuleiro.style.gridTemplateColumns = 'repeat(5, 1fr)';   /* 5 colunas iguais */
-    iniciar(5, 98.9)
+    iniciar(5, 99)
 })
 
 
@@ -66,7 +66,11 @@ tabuleiro.addEventListener("click", (e) => {
     const vazioRect = vazio.getBoundingClientRect()
     const dx = Math.abs(blocoRect.left - vazioRect.left)
     const dy = Math.abs(blocoRect.top - vazioRect.top)
-    if ((dx === 0 && dy === blocoRect.height) || (dy === 0 && dx === blocoRect.width)) {
+    const tolerancia = 5
+    if (
+        (dx < tolerancia && Math.abs(dy - blocoRect.height) < tolerancia) ||
+        (dy < tolerancia && Math.abs(dx - blocoRect.width) < tolerancia)
+    ) {
         const temp = bloco.innerHTML
         bloco.innerHTML = vazio.innerHTML
         vazio.innerHTML = temp
