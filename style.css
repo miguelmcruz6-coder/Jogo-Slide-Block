@@ -63,3 +63,6 @@ main{
     font-size: 2rem;
 }
 
+.bloco, .vazio {
+    transition: all 0.2s ease;
+}
