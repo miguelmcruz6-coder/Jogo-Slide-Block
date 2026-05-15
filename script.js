@@ -12,12 +12,12 @@ facil.addEventListener("click", () => {
 
 medio.addEventListener("click", () => {
     tabuleiro.style.gridTemplateColumns = 'repeat(4, 1fr)';   /* 4 colunas iguais */
-    iniciar(4, 124)
+    iniciar(4, 123.5)
 })
 
 dificil.addEventListener("click", () => {
     tabuleiro.style.gridTemplateColumns = 'repeat(5, 1fr)';   /* 5 colunas iguais */
-    iniciar(5, 99)
+    iniciar(5, 98.9)
 })
 
 
@@ -57,7 +57,6 @@ function embaralhar(array) {
 }
 
 
-
 tabuleiro.addEventListener("click", (e) => {
     const bloco = e.target.closest(".bloco")
     if (!bloco) return
@@ -67,6 +66,7 @@ tabuleiro.addEventListener("click", (e) => {
     const dx = Math.abs(blocoRect.left - vazioRect.left)
     const dy = Math.abs(blocoRect.top - vazioRect.top)
     const tolerancia = 5
+
     if (
         (dx < tolerancia && Math.abs(dy - blocoRect.height) < tolerancia) ||
         (dy < tolerancia && Math.abs(dx - blocoRect.width) < tolerancia)
@@ -79,6 +79,39 @@ tabuleiro.addEventListener("click", (e) => {
         vazio.classList.remove("vazio")
         vazio.classList.add("bloco")
     }
+    verificarVitoria()
 })
 
+
+function verificarVitoria() {
+    const blocos = document.querySelectorAll("#tabuleiro > div")
+    let correto = true
+
+    blocos.forEach((bloco, index) => {
+        const valor = bloco.textContent.trim()
+
+        if (index === blocos.length - 1) {
+            // último deve ser vazio
+            if (!bloco.classList.contains("vazio")) {
+                correto = false
+            }
+        } else {
+            if (parseInt(valor) !== index + 1) {
+                correto = false
+            }
+        }
+    })
+
+    if (correto) {
+        mostrarPopup()
+    }
+}
+
+function mostrarPopup() {
+    document.getElementById("popup").style.display = "flex"
+}
+
+function fecharPopup() {
+    document.getElementById("popup").style.display = "none"
+}
 
