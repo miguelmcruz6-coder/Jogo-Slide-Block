@@ -16,8 +16,8 @@ main{
 }
 
 #tabuleiro{
-    height: 525px;
-    width: 525px;
+    height: 530px;
+    width: 530px;
     background-color: rgb(0, 5, 49);
     border: 15px solid rgb(6, 22, 172);
     display: grid;
