@@ -7,12 +7,12 @@ const tabuleiro = document.getElementById("tabuleiro")
 
 facil.addEventListener("click", () => {
     tabuleiro.style.gridTemplateColumns = 'repeat(3, 1fr)';   /* 3 colunas iguais */
-    iniciar(3, 165)
+    iniciar(3, 167)
 })
 
 medio.addEventListener("click", () => {
     tabuleiro.style.gridTemplateColumns = 'repeat(4, 1fr)';   /* 4 colunas iguais */
-    iniciar(4, 124)
+    iniciar(4, 125)
 })
 
 dificil.addEventListener("click", () => {
