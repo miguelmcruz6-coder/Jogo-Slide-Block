@@ -17,7 +17,7 @@ medio.addEventListener("click", () => {
 
 dificil.addEventListener("click", () => {
     tabuleiro.style.gridTemplateColumns = 'repeat(5, 1fr)';   /* 5 colunas iguais */
-    iniciar(5, 99)
+    iniciar(5, 100)
 })
 
 
